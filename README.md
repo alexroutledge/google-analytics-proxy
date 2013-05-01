@@ -8,3 +8,7 @@ GA Proxy enables the GA API to be used in client side apps without any server si
 As all GA API requests must be authenticated via OAuth, the GA Proxy proxies all authentication request via YQL.
 
 An example flow might be:
+
+-User obtains a refresh token
+-User exchanges the refresh token for an access token (proxied requestd via YQL)
+-User is able to make authenticated requests to the GA API
