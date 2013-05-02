@@ -57,7 +57,12 @@ $.analytics = {
         gapi.client.analytics.data.ga.get(data).execute(callback);
     },
     init: function () {
-        $.when(this.getToken(), this.setApiKey(), this.setToken()).then(function (data, textStatus, jqXHR) {
+        var deferredCollection = [
+          this.getToken(),
+          this.setApiKey(),
+          this.setToken()
+        ];
+        $.when($, deferredCollection).then(function (data, textStatus, jqXHR) {
             gapi.client.load('analytics', 'v3');
         });
     }
