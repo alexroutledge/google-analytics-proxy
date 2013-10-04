@@ -55,9 +55,12 @@ Getting started
 'scope' - should always be set to 'https://www.googleapis.com/auth/analytics.readonly'
 
 -Make a CURL request as per below. Note, you will need to replace the values above with their correct values:
+
+```sh
 http://query.yahooapis.com/v1/public/yql/
 q: 'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = 'client_id' and client_secret = 'client_secret' and refresh_token = 'refresh_token' and grant_type = 'grant_type' and scope = 'scope');'
 format: 'json' || 'xml'
+```
 
 -You'll notice that thus request works correctly but all the environment variables are visible to any users. Instead, we should use query aliases to hide all environment variables.
 
