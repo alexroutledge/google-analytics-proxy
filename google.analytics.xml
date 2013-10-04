@@ -41,7 +41,6 @@ response.object = request.contentType("application/x-www-form-urlencoded").post(
         <key id="end-date" as="end" type="xs:string" paramType="query" required="true"/>
         <key id="max-results" as="max" type="xs:string" paramType="query"/>
         <key id="auth" paramType="variable" required="true"/>
-        <key id="auth" paramType="variable" required="true"/>
       </inputs>
       <execute><![CDATA[
         y.log(request.url);
