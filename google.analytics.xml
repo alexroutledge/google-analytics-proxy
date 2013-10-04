@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+  <meta>
+    <author>Alex Routledge</author>
+    <description>Access your Google Analytics accounts</description>
+    <documentationURL></documentationURL>
+  </meta>
+  <bindings>
+    <select>
+      <urls>
+        <url>https://accounts.google.com/o/oauth2/token</url>
+      </urls>
+      <inputs>
+        <key id="client_id" paramType="variable" required="true"/>
+        <key id="client_secret" paramType="variable" required="true"/>
+        <key id="refresh_token" paramType="variable"/>
+        <key id="grant_type" paramType="variable"/>
+        <key id="scope" paramType="variable"/>
+      </inputs>
+      <execute><![CDATA[
+var content = "client_id=" + encodeURIComponent(client_id) +
+"&client_secret=" + encodeURIComponent(client_secret) +
+"&refresh_token=" + encodeURIComponent(refresh_token) +
+"&grant_type=" + encodeURIComponent(grant_type) + 
+"&scope=" + encodeURIComponent(scope);
+response.maxAge = 3600;
+response.object = request.contentType("application/x-www-form-urlencoded").post(content).response;
+]]></execute>
+    </select>
+    <select itemPath="" produces="JSON">
+      <urls>
+        <url>https://www.googleapis.com/analytics/v3/data/realtime</url>
+      </urls>
+      <inputs>
+        <key id="ids" type="xs:string" paramType="query" required="true"/>
+        <key id="dimensions" type="xs:string" paramType="query"/>
+        <key id="metrics" type="xs:string" paramType="query" required="true"/>
+        <key id="filters" type="xs:string" paramType="query"/>
+        <key id="sort" type="xs:string" paramType="query"/>
+        <key id="start-date" as="start" type="xs:string" paramType="query" required="true"/>
+        <key id="end-date" as="end" type="xs:string" paramType="query" required="true"/>
+        <key id="max-results" as="max" type="xs:string" paramType="query"/>
+        <key id="auth" paramType="variable" required="true"/>
+        <key id="auth" paramType="variable" required="true"/>
+      </inputs>
+      <execute><![CDATA[
+        y.log(request.url);
+        response.object = request.header("Authorization", "Bearer " + auth).get().response;
+      ]]></execute>
+    </select>
+  </bindings>
+</table>
