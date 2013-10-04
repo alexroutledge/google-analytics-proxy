@@ -36,13 +36,13 @@ This app assumes you have the following:
 Overview
 ----
 
-A sample user flow would be:
+##### A sample user flow would be:
 
 * User obtains a refresh token
 * User exchanges the refresh token for an access token via the Google OAuth API (the refresh token is valid for 60 mins and will be cached for this period of time)
 * User is able to make authenticated requests to the GA API
 
-Getting started
+##### Getting started
 
 * After you've created an API project, make a note of the following for your project:
 
