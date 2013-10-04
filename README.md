@@ -46,15 +46,11 @@ Getting started
 
 * After you've created an API project, make a note of the following for your project:
 
-'client_id' - should always be set to the value in the API console
-
-'client_secret' - should always be set to the value in the API console
-
-'refresh_token' - should always be set to the value in the API console
-
-'grant_type' - should always be set to 'refresh_token'
-'scope' - should always be set to 'https://www.googleapis.com/auth/analytics.readonly'
-
+* 'client_id' - should always be set to the value in the API console
+* 'client_secret' - should always be set to the value in the API console
+* 'refresh_token' - should always be set to the value in the API console
+* 'grant_type' - should always be set to 'refresh_token'
+* 'scope' - should always be set to 'https://www.googleapis.com/auth/analytics.readonly'
 * Make a CURL request as per below. Note, you will need to replace the values above with their correct values:
 
 ```sh
