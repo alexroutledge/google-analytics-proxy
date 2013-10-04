@@ -66,14 +66,20 @@ Using YQL query aliases
 
 * Copy and paste the following query into the textarea and click on 'Create Query Alias':
 
+```sh
 'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = 'client_id' and client_secret = 'client_secret' and refresh_token = 'refresh_token' and grant_type = 'grant_type' and scope = 'scope');'
+```
 
 * Select an alias and click 'next'
 
 * The YQL console will now show you the generated URL, e.g:
 
+```sh
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
+```
 
 * To use the query, you simply need to append a valid 'format' query string parameter, e.g.:
 
+```sh
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}?format=json
+```
