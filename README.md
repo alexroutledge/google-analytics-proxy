@@ -11,7 +11,9 @@ The YQL GA Proxy allows you to publish data from the Google Analytics API via a 
 Features
 ----
 
-Scalability: The YQL GA Proxy handles all authentication so you do not need to use the Google Python or Java OAuth APIs. It is therefore possible to create a purely client side application without any server side components.
+##### Scalability:
+
+The YQL GA Proxy handles all authentication so you do not need to use the Google Python or Java OAuth APIs. It is therefore possible to create a purely client side application without any server side components.
 
 Caching: You can use YQL to cache any requests. The Google API quota is limited to 10,000 per day so this has some obvious limitations. By utilising YQL's caching infrastructure, you can cache requests for an hour or longer to effectively manage your quota.
 
