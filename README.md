@@ -32,15 +32,13 @@ Overview
 
 A sample user flow would be:
 
--User obtains a refresh token
-
--User exchanges the refresh token for an access token via the Google OAuth API (the refresh token is valid for 60 mins and will be cached for this period of time)
-
--User is able to make authenticated requests to the GA API
+* User obtains a refresh token
+* User exchanges the refresh token for an access token via the Google OAuth API (the refresh token is valid for 60 mins and will be cached for this period of time)
+* User is able to make authenticated requests to the GA API
 
 Getting started
 
--After you've created an API project, make a note of the following for your project:
+* After you've created an API project, make a note of the following for your project:
 
 'client_id' - should always be set to the value in the API console
 
@@ -51,7 +49,7 @@ Getting started
 'grant_type' - should always be set to 'refresh_token'
 'scope' - should always be set to 'https://www.googleapis.com/auth/analytics.readonly'
 
--Make a CURL request as per below. Note, you will need to replace the values above with their correct values:
+* Make a CURL request as per below. Note, you will need to replace the values above with their correct values:
 
 ```sh
 http://query.yahooapis.com/v1/public/yql/
@@ -59,23 +57,23 @@ q: 'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SE
 format: 'json' || 'xml'
 ```
 
--You'll notice that thus request works correctly but all the environment variables are visible to any users. Instead, we should use query aliases to hide all environment variables.
+* You'll notice that thus request works correctly but all the environment variables are visible to any users. Instead, we should use query aliases to hide all environment variables.
 
 Using YQL query aliases
 ----
 
--Go to http://developer.yahoo.com/yql/console/
+* Go to http://developer.yahoo.com/yql/console/
 
--Copy and paste the following query into the textarea and click on 'Create Query Alias':
+* Copy and paste the following query into the textarea and click on 'Create Query Alias':
 
 'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = 'client_id' and client_secret = 'client_secret' and refresh_token = 'refresh_token' and grant_type = 'grant_type' and scope = 'scope');'
 
--Select an alias and click 'next'
+* Select an alias and click 'next'
 
--The YQL console will now show you the generated URL, e.g:
+* The YQL console will now show you the generated URL, e.g:
 
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 
--To use the query, you simply need to append a valid 'format' query string parameter, e.g.:
+* To use the query, you simply need to append a valid 'format' query string parameter, e.g.:
 
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}?format=json
