@@ -56,6 +56,6 @@ Using YQL query aliases
 
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 
--To use the query, you simply need to append the a valid 'format' query string parameter, e.g.:
+-To use the query, you simply need to append a valid 'format' query string parameter, e.g.:
 
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}?format=json
