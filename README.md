@@ -2,6 +2,7 @@ Google Analytics Proxy
 ======================
 
 Introduction
+----
 
 YQL is a service that enables you to access and combine multiple sources of publically available data via a SQL-like syntax.
 
