@@ -9,6 +9,7 @@ YQL is a service that enables you to access and combine multiple sources of publ
 The YQL GA Proxy allows you to publish data from the Google Analytics API via a publically accessible REST url. You can use the webservice to create custom dashboards, widgets or to create product/search recommendation or autosuggest algorithms. The service works with the following core reporting, real time reporting and multi-channel funnels reporting APIs.
 
 Features
+----
 
 Scalability: The YQL GA Proxy handles all authentication so you do not need to use the Google Python or Java OAuth APIs. It is therefore possible to create a purely client side application without any server side components.
 
@@ -17,6 +18,7 @@ Caching: You can use YQL to cache any requests. The Google API quota is limited 
 Mixins: One of the major benefits of using the YQL GA Proxy is that you can merge the data from the GA API with other data sources. As an example, you can create a recommendations algorithm that merges data from the GA API with products that have also been shared on social media platforms.
 
 Assumptions
+----
 
 This app assumes you have the following:
 
@@ -29,6 +31,7 @@ This app assumes you have the following:
 -A registered Google Analytics API project and the associated environment variables
 
 Overview
+----
 
 A sample user flow would be:
 
@@ -59,6 +62,7 @@ format: 'json' || 'xml'
 -You'll notice that thus request works correctly but all the environment variables are visible to any users. Instead, we should use query aliases to hide all environment variables.
 
 Using YQL query aliases
+----
 
 -Go to http://developer.yahoo.com/yql/console/
 
