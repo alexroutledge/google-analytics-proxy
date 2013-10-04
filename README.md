@@ -17,7 +17,7 @@ The YQL GA Proxy handles all authentication so you do not need to use the Google
 
 ##### Caching
 
-You can use YQL to cache any requests. The Google API quota is limited to 10,000 per day so this has some obvious limitations. By utilising YQL's caching infrastructure, you can cache requests for an hour or longer to effectively manage your quota.
+You can use YQL to cache any requests. By utilising YQL's caching infrastructure, you can cache requests for an hour or longer to effectively manage your quota.
 
 ##### Mixins
 
