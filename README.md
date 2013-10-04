@@ -22,10 +22,10 @@ Assumptions
 
 This app assumes you have the following:
 
-*A basic knowledge of the Google Analytics and YQL APIs
-*A Google account
-*A Yahoo account
-*A registered Google Analytics API project and the associated environment variables
+* A basic knowledge of the Google Analytics and YQL APIs
+* A Google account
+* A Yahoo account
+* A registered Google Analytics API project and the associated environment variables
 
 Overview
 ----
