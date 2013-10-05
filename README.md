@@ -72,8 +72,12 @@ Overview
 
 ```sh
 http://query.yahooapis.com/v1/public/yql/
-q: 'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = 'client_id' and client_secret = 'client_secret' and refresh_token = 'refresh_token' and grant_type = 'grant_type' and scope = 'scope');'
-format: 'json' || 'xml'
+q: 'USE "https://dl.dropboxusercontent.com/u/8767938/fresca/html5/ga/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = '577935248478-10pg2k39kh1ivo7apbmere1t481rn7f7.apps.googleusercontent.com' and client_secret = 'WA6oVy3DlY5WDZbbJDKbLJA-' and refresh_token = '1/CN5Z4VnAIz6bX21SuYmBpi0ekDj4ulYwKCTLhF1n0nw' and grant_type = 'refresh_token' and scope = 'https://www.googleapis.com/auth/analytics.readonly') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;'
+format: 'json' || 'xml',
+ids: 'ga:123456',
+metrics: 'ga:visitors',
+start-date: '2013-10-04',
+end-date: '2013-10-04'
 ```
 
 * You'll notice that thus request works correctly but all the environment variables are visible to any users. Instead, we should use query aliases to hide all environment variables.
@@ -97,10 +101,15 @@ Using YQL query aliases
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 ```
 
-* To use the query, you simply need to append a valid 'format' query string parameter, e.g.:
+* To use the query, you simply need to make a CURL request as below, e.g.:
 
 ```sh
-http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}?format=json
+http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
+format: 'json' || 'xml',
+ids: 'ga:123456',
+metrics: 'ga:visitors',
+start-date: '2013-10-04',
+end-date: '2013-10-04'
 ```
 
 Caching requests
@@ -109,7 +118,13 @@ Caching requests
 * To cache a request, you simply need to append the '_maxage' parameter to the URL. The parameter value should be populated with the length of time that the request should be cached for, e.g.:
 
 ```sh
-http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}?format=json&_maxage=3600
+http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
+format: 'json' || 'xml',
+ids: 'ga:123456',
+metrics: 'ga:visitors',
+start-date: '2013-10-04',
+end-date: '2013-10-04'
+_maxage: 3600
 ```
 
 Using the real time API
