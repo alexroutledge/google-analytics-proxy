@@ -118,6 +118,6 @@ Using the real time API
 
 ```sh
 <urls>
-  <url>https://www.googleapis.com/analytics/v3/data/ga</url>
+  <url>https://www.googleapis.com/analytics/v3/data/realtime</url>
 </urls>
 ```
