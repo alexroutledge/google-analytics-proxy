@@ -51,6 +51,7 @@ Overview
 * 'refresh_token' - should always be set to the value in the API console
 * 'grant_type' - should always be set to 'refresh_token'
 * 'scope' - should always be set to 'https://www.googleapis.com/auth/analytics.readonly'
+* Use the GA Dev Tools Explorer (http://ga-dev-tools.appspot.com/explorer/) to get a valid query URI to use.
 
 * Make a CURL request as per below. Note, you will need to replace the values above with their correct values:
 
@@ -94,7 +95,6 @@ http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 ```sh
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 format: 'json' || 'xml',
-format: 'json' || 'xml',
 ids: 'ids',
 dimensions: 'dimensions'
 metrics: 'metrics',
@@ -112,7 +112,6 @@ Caching requests
 
 ```sh
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
-format: 'json' || 'xml',
 format: 'json' || 'xml',
 ids: 'ids',
 dimensions: 'dimensions'
