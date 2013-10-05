@@ -111,3 +111,13 @@ Caching requests
 ```sh
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}?format=json&_maxage=3600
 ```
+
+Using the real time API
+
+* Update the table/bindings/select/urls/url node of the query to 'https://www.googleapis.com/analytics/v3/data/realtime' instead of 'https://www.googleapis.com/analytics/v3/data/ga', e.g.:
+
+```sh
+<urls>
+  <url>https://www.googleapis.com/analytics/v3/data/ga</url>
+</urls>
+```
