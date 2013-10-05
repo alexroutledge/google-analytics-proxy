@@ -113,6 +113,7 @@ http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}?format=json&_max
 ```
 
 Using the real time API
+----
 
 * Update the table/bindings/select/urls/url node of the query to 'https://www.googleapis.com/analytics/v3/data/realtime' instead of 'https://www.googleapis.com/analytics/v3/data/ga', e.g.:
 
