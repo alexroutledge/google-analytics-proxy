@@ -102,3 +102,12 @@ http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 ```sh
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}?format=json
 ```
+
+Caching requests
+----
+
+* To cache a request, you simply need to append the '_maxage' parameter to the URL. The parameter value should be populated with the length of time that the request should be cached for, e.g.:
+
+```sh
+http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}?format=json&_maxage=3600
+```
