@@ -17,7 +17,7 @@ The YQL GA Proxy handles all authentication so you do not need to use the Google
 
 ##### Caching
 
-You can use YQL to cache any requests. By utilising YQL's caching infrastructure, you can cache requests for an hour or longer to effectively manage your quota.
+You can use YQL to cache any requests. By utilising YQL's caching infrastructure, you can cache requests to effectively manage your quota.
 
 ##### Mixins
 
@@ -51,6 +51,7 @@ Overview
 * 'refresh_token' - should always be set to the value in the API console
 * 'grant_type' - should always be set to 'refresh_token'
 * 'scope' - should always be set to 'https://www.googleapis.com/auth/analytics.readonly'
+* Open the 'google.analytics.xml' file
 * Make a CURL request as per below. Note, you will need to replace the values above with their correct values:
 
 ```sh
