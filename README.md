@@ -58,10 +58,14 @@ Overview
 http://query.yahooapis.com/v1/public/yql/
 q: 'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = '577935248478-10pg2k39kh1ivo7apbmere1t481rn7f7.apps.googleusercontent.com' and client_secret = 'WA6oVy3DlY5WDZbbJDKbLJA-' and refresh_token = '1/CN5Z4VnAIz6bX21SuYmBpi0ekDj4ulYwKCTLhF1n0nw' and grant_type = 'refresh_token' and scope = 'https://www.googleapis.com/auth/analytics.readonly') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;'
 format: 'json' || 'xml',
-ids: 'ga:123456',
-metrics: 'ga:visitors',
-start-date: '2013-10-04',
-end-date: '2013-10-04'
+ids: 'ids',
+dimensions: 'dimensions'
+metrics: 'metrics',
+filters: 'filters',
+sort: 'sort',
+start-date: 'start-date',
+end-date: 'end-date'
+max-results: 'max-results'
 ```
 
 * You'll notice that thus request works correctly but all the environment variables are visible to any users. Instead, we should use query aliases to hide all environment variables.
@@ -90,10 +94,15 @@ http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 ```sh
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 format: 'json' || 'xml',
-ids: 'ga:123456',
-metrics: 'ga:visitors',
-start-date: '2013-10-04',
-end-date: '2013-10-04'
+format: 'json' || 'xml',
+ids: 'ids',
+dimensions: 'dimensions'
+metrics: 'metrics',
+filters: 'filters',
+sort: 'sort',
+start-date: 'start-date',
+end-date: 'end-date'
+max-results: 'max-results'
 ```
 
 Caching requests
@@ -104,10 +113,15 @@ Caching requests
 ```sh
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 format: 'json' || 'xml',
-ids: 'ga:123456',
-metrics: 'ga:visitors',
-start-date: '2013-10-04',
-end-date: '2013-10-04'
+format: 'json' || 'xml',
+ids: 'ids',
+dimensions: 'dimensions'
+metrics: 'metrics',
+filters: 'filters',
+sort: 'sort',
+start-date: 'start-date',
+end-date: 'end-date'
+max-results: 'max-results',
 _maxage: 3600
 ```
 
