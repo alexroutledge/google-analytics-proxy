@@ -51,28 +51,12 @@ Overview
 * 'refresh_token' - should always be set to the value in the API console
 * 'grant_type' - should always be set to 'refresh_token'
 * 'scope' - should always be set to 'https://www.googleapis.com/auth/analytics.readonly'
-* Open the 'google.analytics.xml' file
-* Update the table/bindings/select/inputs node of the query with the required inputs. An example is shown below.
-
-```sh
-<inputs>
-  <key id="ids" type="xs:string" paramType="query" default="ga:123456" required="true"/>
-  <key id="dimensions" type="xs:string" paramType="query"/>
-  <key id="metrics" type="xs:string" paramType="query" default="ga:visitors" required="true"/>
-  <key id="filters" type="xs:string" paramType="query"/>
-  <key id="sort" type="xs:string" paramType="query"/>
-  <key id="start-date" as="start" type="xs:string" paramType="query" default="2013-10-04" required="true"/>
-  <key id="end-date" as="end" type="xs:string" paramType="query" default="2013-10-04" required="true"/>
-  <key id="max-results" as="max" type="xs:string" paramType="query"/>
-  <key id="auth" paramType="variable" required="true"/>
-</inputs>
-```
 
 * Make a CURL request as per below. Note, you will need to replace the values above with their correct values:
 
 ```sh
 http://query.yahooapis.com/v1/public/yql/
-q: 'USE "https://dl.dropboxusercontent.com/u/8767938/fresca/html5/ga/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = '577935248478-10pg2k39kh1ivo7apbmere1t481rn7f7.apps.googleusercontent.com' and client_secret = 'WA6oVy3DlY5WDZbbJDKbLJA-' and refresh_token = '1/CN5Z4VnAIz6bX21SuYmBpi0ekDj4ulYwKCTLhF1n0nw' and grant_type = 'refresh_token' and scope = 'https://www.googleapis.com/auth/analytics.readonly') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;'
+q: 'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = '577935248478-10pg2k39kh1ivo7apbmere1t481rn7f7.apps.googleusercontent.com' and client_secret = 'WA6oVy3DlY5WDZbbJDKbLJA-' and refresh_token = '1/CN5Z4VnAIz6bX21SuYmBpi0ekDj4ulYwKCTLhF1n0nw' and grant_type = 'refresh_token' and scope = 'https://www.googleapis.com/auth/analytics.readonly') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;'
 format: 'json' || 'xml',
 ids: 'ga:123456',
 metrics: 'ga:visitors',
@@ -90,7 +74,7 @@ Using YQL query aliases
 * Copy and paste the following query into the textarea and click on 'Create Query Alias':
 
 ```sh
-'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = 'client_id' and client_secret = 'client_secret' and refresh_token = 'refresh_token' and grant_type = 'grant_type' and scope = 'scope');'
+USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = '577935248478-10pg2k39kh1ivo7apbmere1t481rn7f7.apps.googleusercontent.com' and client_secret = 'WA6oVy3DlY5WDZbbJDKbLJA-' and refresh_token = '1/CN5Z4VnAIz6bX21SuYmBpi0ekDj4ulYwKCTLhF1n0nw' and grant_type = 'refresh_token' and scope = 'https://www.googleapis.com/auth/analytics.readonly') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;
 ```
 
 * Select an alias and click 'next'
