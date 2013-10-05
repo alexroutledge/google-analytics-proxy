@@ -52,6 +52,22 @@ Overview
 * 'grant_type' - should always be set to 'refresh_token'
 * 'scope' - should always be set to 'https://www.googleapis.com/auth/analytics.readonly'
 * Open the 'google.analytics.xml' file
+* Update the table/bindings/select/inputs node of the query with the required inputs. An example is shown below.
+
+```sh
+<inputs>
+  <key id="ids" type="xs:string" paramType="query" default="ga:123456" required="true"/>
+  <key id="dimensions" type="xs:string" paramType="query"/>
+  <key id="metrics" type="xs:string" paramType="query" default="ga:visitors" required="true"/>
+  <key id="filters" type="xs:string" paramType="query"/>
+  <key id="sort" type="xs:string" paramType="query"/>
+  <key id="start-date" as="start" type="xs:string" paramType="query" default="2013-10-04" required="true"/>
+  <key id="end-date" as="end" type="xs:string" paramType="query" default="2013-10-04" required="true"/>
+  <key id="max-results" as="max" type="xs:string" paramType="query"/>
+  <key id="auth" paramType="variable" required="true"/>
+</inputs>
+```
+
 * Make a CURL request as per below. Note, you will need to replace the values above with their correct values:
 
 ```sh
