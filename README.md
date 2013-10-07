@@ -6,7 +6,7 @@ Introduction
 
 YQL is a service that enables you to access and combine multiple sources of publically available data via a SQL-like syntax.
 
-The YQL GA Proxy allows you to publish data from the Google Analytics API via a publically accessible REST url. You can use the webservice to create custom dashboards, widgets, product/search recommendation or autosuggest algorithms. The service works with the following core reporting, real time reporting and multi-channel funnels reporting APIs.
+The YQL GA Proxy allows you to publish data from the Google Analytics API via a publically accessible REST url. You can use the webservice to create custom dashboards, widgets, product/search recommendation or autosuggest algorithms. The service works with the core reporting, real time reporting and multi-channel funnels reporting APIs.
 
 Features
 ----
