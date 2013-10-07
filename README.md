@@ -114,10 +114,16 @@ _maxage: 3600
 Using the real time API
 ----
 
-* Update the table/bindings/select/urls/url node of the query to 'https://www.googleapis.com/analytics/v3/data/realtime' instead of 'https://www.googleapis.com/analytics/v3/data/ga', e.g.:
+* To use data from the realtime API, you should change the query to use the 'google.analytics.realtime.xml' file and repeat the steps in the 'Overview', 'Using YQL query aliases' and 'Caching requests' sections.
+
+An example is shown below:
 
 ```sh
-<urls>
-  <url>https://www.googleapis.com/analytics/v3/data/realtime</url>
-</urls>
+http://query.yahooapis.com/v1/public/yql/
+q: 'USE "path_to/google.analytics.realtime.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = '577935248478-10pg2k39kh1ivo7apbmere1t481rn7f7.apps.googleusercontent.com' and client_secret = 'WA6oVy3DlY5WDZbbJDKbLJA-' and refresh_token = '1/CN5Z4VnAIz6bX21SuYmBpi0ekDj4ulYwKCTLhF1n0nw' and grant_type = 'refresh_token' and scope = 'https://www.googleapis.com/auth/analytics.readonly') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;'
+format: 'json',
+ids: 'ga:123456',
+metrics: 'ga:visitors',
+start-date: '2012-10-04',
+end-date: '2013-10-04'
 ```
