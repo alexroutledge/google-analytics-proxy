@@ -29,7 +29,7 @@ response.object = request.contentType("application/x-www-form-urlencoded").post(
     </select>
     <select itemPath="" produces="JSON">
       <urls>
-        <url>https://www.googleapis.com/analytics/v3/data/realtime</url>
+        <url>https://www.googleapis.com/analytics/v3/data/ga</url>
       </urls>
       <inputs>
         <key id="ids" type="xs:string" paramType="query" required="true"/>
