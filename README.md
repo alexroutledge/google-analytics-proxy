@@ -85,7 +85,7 @@ USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
 ```
 
-* To use the query, you simply need to make a CURL request as below, e.g.:
+* To use the query, you simply need to initiate a request from your application as per below, e.g.:
 
 ```sh
 http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}
