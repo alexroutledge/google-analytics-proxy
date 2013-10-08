@@ -1,6 +1,6 @@
 var template = 'Between {{data.query.results.json.query.start-date}} and {{data.query.results.json.query.end-date}}, there were {{data.query.results.json.totalsForAllResults.ga:visitors}} visitors'
 $.ajax({
-  url: 'http://query.yahooapis.com/v1/public/yql/alexroutledge/analytics',
+  url: 'http://query.yahooapis.com/v1/public/yql/{{username}}/{{query}}',
   data: {
     'ids': 'ga:123456',
     'metrics': 'ga:visitors',
