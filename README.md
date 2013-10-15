@@ -56,7 +56,7 @@ Overview
 
 ```sh
 http://query.yahooapis.com/v1/public/yql/
-q: 'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = '577935248478-10pg2k39kh1ivo7apbmere1t481rn7f7.apps.googleusercontent.com' and client_secret = 'WA6oVy3DlY5WDZbbJDKbLJA-' and refresh_token = '1/CN5Z4VnAIz6bX21SuYmBpi0ekDj4ulYwKCTLhF1n0nw' and grant_type = 'refresh_token' and scope = 'https://www.googleapis.com/auth/analytics.readonly') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;'
+q: 'USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = 'client_id' and client_secret = 'client_secret' and refresh_token = 'refresh_token' and grant_type = 'grant_type' and scope = 'scope') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;'
 format: 'json',
 ids: 'ga:123456',
 metrics: 'ga:visitors',
@@ -74,7 +74,7 @@ Using YQL query aliases
 * Copy and paste the following query into the textarea and click on 'Create Query Alias':
 
 ```sh
-USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = '577935248478-10pg2k39kh1ivo7apbmere1t481rn7f7.apps.googleusercontent.com' and client_secret = 'WA6oVy3DlY5WDZbbJDKbLJA-' and refresh_token = '1/CN5Z4VnAIz6bX21SuYmBpi0ekDj4ulYwKCTLhF1n0nw' and grant_type = 'refresh_token' and scope = 'https://www.googleapis.com/auth/analytics.readonly') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;
+USE "path_to/google.analytics.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = 'client_id' and client_secret = 'client_secret' and refresh_token = 'refresh_token' and grant_type = 'grant_type' and scope = 'scope') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;
 ```
 
 * Select an alias and click 'next'
@@ -120,7 +120,7 @@ An example is shown below:
 
 ```sh
 http://query.yahooapis.com/v1/public/yql/
-q: 'USE "path_to/google.analytics.realtime.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = '577935248478-10pg2k39kh1ivo7apbmere1t481rn7f7.apps.googleusercontent.com' and client_secret = 'WA6oVy3DlY5WDZbbJDKbLJA-' and refresh_token = '1/CN5Z4VnAIz6bX21SuYmBpi0ekDj4ulYwKCTLhF1n0nw' and grant_type = 'refresh_token' and scope = 'https://www.googleapis.com/auth/analytics.readonly') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;'
+q: 'USE "path_to/google.analytics.realtime.xml" as ga; SELECT * from ga where auth IN (SELECT access_token from ga where client_id = 'client_id' and client_secret = 'client_secret' and refresh_token = 'refresh_token' and grant_type = 'grant_type' and scope = 'scope') and ids = @ids and metrics = @metrics and start-date = @start-date and end-date = @end-date;'
 format: 'json',
 ids: 'ga:123456',
 metrics: 'ga:visitors',
